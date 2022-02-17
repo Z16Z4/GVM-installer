@@ -36,11 +36,9 @@ os.system("systemctl restart postgresql")
 os.system("sudo systemctl restart postgresql")
 os.system("systemctl enable postgresql")
 os.system("sudo systemctl enable postgresql")
-
+os.system("sudo cp -r install-gvm-part2.py /opt/gvm")
 # As root
-os.system('''sudo sed -i 's/\"$/\:\/opt\/gvm\/bin\:\/opt\/gvm\/sbin\:\/opt\/gvm\/\.local\/bin\"/g' /etc/environment''')
-os.system('sudo echo "/opt/gvm/lib" > /etc/ld.so.conf.d/gvm.conf')
-
+os.system("echo 'IMPORTANT:'")
 os.system("echo ""Please enter 'sudo su - gvm '  and run the nex installer""")
 
 
