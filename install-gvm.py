@@ -21,7 +21,7 @@ os.system("sudo apt-get -y install postgresql postgresql-contrib postgresql-serv
 os.system("sudo systemctl restart postgresql")
 
 #Add gvm user 
-os.system("sudo useradd -r -d /opt/gvm -c "GVM (OpenVAS) User" -s /bin/bash gvm")
+os.system('''sudo useradd -r -d /opt/gvm -c "GVM (OpenVAS) User" -s /bin/bash gvm''')
 os.system("sudo mkdir /opt/gvm")
 os.system("sudo chown gvm:gvm /opt/gvm")
 
@@ -30,8 +30,8 @@ os.system("sudo -Hiu postgres createuser gvm")
 os.system("sudo -Hiu postgres createdb -O gvm gvmd")
 os.system("sudo -Hiu postgres psql -c 'create role dba with superuser noinherit;' gvmd")
 os.system("sudo -Hiu postgres psql -c 'grant dba to gvm;' gvmd")
-os.system("sudo -Hiu postgres psql -c 'create extension "uuid-ossp";' gvmd")
-os.system("sudo -Hiu postgres psql -c 'create extension "pgcrypto";' gvmd")
+os.system('''sudo -Hiu postgres psql -c 'create extension "uuid-ossp";' gvmd''')
+os.system('''sudo -Hiu postgres psql -c 'create extension "pgcrypto";' gvmd''')
 os.system("systemctl restart postgresql")
 os.system("sudo systemctl restart postgresql")
 os.system("systemctl enable postgresql")
