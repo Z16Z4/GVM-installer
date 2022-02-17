@@ -10,7 +10,7 @@ os.system("sudo apt-get -y install gcc g++ make bison flex libksba-dev curl redi
 
 #Update system
 os.system("sudo curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -")
-os.system("sudo echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list")
+os.system('''sudo echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list''')
 os.system("sudo apt update")
 
 #Install yarn as root
